@@ -1,0 +1,108 @@
+*::after, *::before {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #211e1e;
+}
+
+.background {
+    width: 430px;
+    height: 580px;
+    position: absolute;
+    transform: translate(-50%, -50%);
+    left: 50%;
+    top: 50%;
+    background-color: #ffffff60;
+}
+
+.background .shape {
+    height: 200px;
+    width: 200px;
+    position: absolute;
+    border-radius: 50%;
+}
+
+form {
+    height: auto;
+    width: 350px; /* Adjusted width */
+    background-color: rgba(255, 255, 255, 0.13);
+    position: absolute;
+    transform: translate(-50%, -50%);
+    border-radius: 10px;
+    top: 50%;
+    left: 50%;
+    backdrop-filter: blur(10px);
+    border: 2px solid rgba(255, 255, 255, 0.1);
+    padding: 30px 25px; /* Adjusted padding */
+    box-shadow: 0 0 40px rgba(8, 7, 16, 0.6);
+}
+
+form * {
+    color: white;
+    font-family: "Poppins", sans-serif;
+    letter-spacing: 0.5px;
+    outline: none;
+    border: none;
+}
+
+form h3 {
+    font-size: 24px; /* Adjusted font size */
+    font-weight: 500;
+    line-height: 32px; /* Adjusted line height */
+    text-align: center;
+}
+
+form label {
+    display: block;
+    margin-top: 15px; /* Adjusted margin */
+    font-size: 16px; /* Adjusted font size */
+    font-weight: 500;
+}
+
+input {
+    display: block;
+    height: 40px; /* Adjusted height */
+    width: 100%;
+    background-color: rgb(52, 49, 50);
+    border-radius: 3px;
+    padding: 0 10px;
+    margin-top: 5px; /* Adjusted margin */
+    font-size: 14px;
+    font-weight: 300;
+}
+
+::placeholder {
+    color: rgba(255, 255, 255, 0.6);
+}
+
+button {
+    margin-top: 20px; /* Adjusted margin */
+    width: 100%;
+    background-color: white;
+    padding: 12px 10px; /* Adjusted padding */
+    font-size: 16px; /* Adjusted font size */
+    font-weight: 500;
+    cursor: pointer;
+    color: rgb(0, 0, 0);
+    border-radius: 5px;
+}
+
+.form {
+    margin-top: 15px; /* Adjusted margin */
+    text-align: center;
+}
+
+.form p {
+    font-size: 14px;
+    color: white;
+}
+
+.form a {
+    color: #5cb85c;
+    text-decoration: none;
+}
+

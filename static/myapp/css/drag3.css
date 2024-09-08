@@ -1,0 +1,495 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-image: url("/static/myapp/images/background.png");
+    background-size: cover;
+    
+}
+
+#navbar {
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 10px 0;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+}
+
+#logo, #userbox {
+    background-color: rgba(255, 255, 255, 0.3);
+    padding: 10px;
+    color: white;
+    font-weight: bold;
+    margin: 0 10px;
+}
+
+
+#menu ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+#menu ul li {
+    height:100px;
+    width: 250px;
+    padding: 100px; /* Adjust padding for spacing */
+    background-color: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(5px);
+    
+    
+}
+
+#menu ul li a {
+    display: block;
+    height: 100%;
+    width: 100%;
+    text-decoration: none;
+    color: white;
+    text-align: center;
+    
+}
+#menu ul li a:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+}
+.container2{
+    height:92px;
+    width:624px;
+    background-color: rgba(255, 255, 255, 0.2);
+    position: absolute;
+    top:59px;
+    right:200px;
+    display:flex;
+    flex-direction: row;
+  
+
+}
+#deal1, #deal2 {
+    padding: 10px;
+    text-decoration: none;
+    color: white;
+    text-align: center;
+   
+}
+
+
+.container3 {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+   grid-template-rows: 10;
+    place-self: stretch;/* Create 6 columns */
+    grid-gap: 10px; /* Gap between grid items */
+    background-color: rgba(255, 255, 255, 0.2);
+    padding: 20px;
+    margin-top: 20px;
+    position: absolute;
+    top:160px;
+    left:250px;
+    width: calc(100% - 24px); /* Adjust width to fit within the window */
+    overflow-x: auto; /* Enable horizontal scrollbar when necessary */
+    overflow-y: hidden; /* Hide vertical scrollbar */
+    /* Collapse borders */
+    border-spacing:2em; /* Remove spacing between borders */
+    place-items: stretch;
+}
+
+.item {
+    background-color: rgba(205, 21, 21, 0.3);
+    padding: 10px;
+    color: white;
+    font-weight: bold;
+    text-align: center;
+    border-right:1px solid white;
+    white-space: nowrap; /* Prevent text wrapping */
+
+}
+#it1{
+    position:relative;
+    grid-column-start: 1;
+    grid-column-end: 1;
+    border-right-style: dotted;
+}
+
+.item:last-child {
+    border-right: none; /* Remove border for last column */
+}
+
+
+
+
+/* Customize scrollbar */
+.container3::-webkit-scrollbar {
+    width: 10px; /* Set scrollbar width */
+}
+
+.container3::-webkit-scrollbar-track {
+    background: transparent; /* Set track color */
+}
+
+.container3::-webkit-scrollbar-thumb {
+    background-color: rgba(0, 0, 0, 0.2); /* Set thumb color */
+    border-radius: 5px; /* Set thumb border radius */
+}
+
+.formContainer {
+    
+   display: grid;
+   gap:10px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #fff;
+}
+
+/* Keep the rest of the form CSS styles as they are */
+
+
+.hidden {
+    display: none;
+  }
+  
+  #formContainer {
+    margin: 20px 0;
+    padding: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+  
+  #exampleForm label {
+    display: block;
+    margin-top: 10px;
+  }
+  
+  #exampleForm input[type=text],
+  #exampleForm input[type=tel],
+  #exampleForm input[type=email] {
+    width: 100%;
+    padding: 8px;
+    margin-top: 5px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }
+  
+  #exampleForm fieldset {
+    border: none;
+    margin: 10px 0;
+    padding: 0;
+  }
+  
+  #exampleForm legend {
+    font-size: 1.2em;
+    margin-bottom: 10px;
+  }
+  
+  #exampleForm button[type=submit] {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-top: 20px;
+  }
+  
+  #exampleForm button[type=submit]:hover {
+    background-color: #45a049;
+  }
+  
+  #exampleForm button[type=submit], .cancelButton {
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-top: 20px;
+    display: inline-block; /* Makes buttons sit side-by-side */
+    margin-right: 10px; /* Adds some space between the buttons */
+}
+
+#exampleForm button[type=submit] {
+    background-color: #4CAF50; /* Green background for the Save button */
+}
+
+#exampleForm button[type=submit]:hover {
+    background-color: #45a049; /* Darker green on hover */
+}
+
+.cancelButton {
+    background-color: #f44336; /* Red background for the Cancel button */
+    /* Align styling with the Save button */
+    font-size: inherit; /* Ensures font size matches the form */
+}
+
+.cancelButton:hover {
+    background-color: #d32f2f; /* Darker red on hover */
+}
+
+/* Applies to both #exampleForm and #inProgressForm */
+#exampleForm, #inProgressForm {
+    margin: 20px 0;
+    padding: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+#exampleForm label,
+#inProgressForm label {
+    display: block;
+    margin-top: 10px;
+}
+
+#exampleForm input[type=text],
+#exampleForm input[type=tel],
+#exampleForm input[type=email],
+#inProgressForm input[type=text],
+#inProgressForm input[type=tel],
+#inProgressForm input[type=email] {
+    width: 100%;
+    padding: 8px;
+    margin-top: 5px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+#exampleForm fieldset, #inProgressForm fieldset {
+    border: none;
+    margin: 10px 0;
+    padding: 0;
+}
+
+#exampleForm legend, #inProgressForm legend {
+    font-size: 1.2em;
+    margin-bottom: 10px;
+}
+
+#exampleForm button[type=submit],
+#exampleForm .cancelButton,
+#inProgressForm button[type=submit],
+#inProgressForm .cancelButton {
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-top: 20px;
+    display: inline-block; /* Makes buttons sit side-by-side */
+    margin-right: 10px; /* Adds some space between the buttons */
+}
+
+#exampleForm button[type=submit],
+#inProgressForm button[type=submit] {
+    background-color: #4CAF50; /* Green background for the Save button */
+}
+
+#exampleForm button[type=submit]:hover,
+#inProgressForm button[type=submit]:hover {
+    background-color: #45a049; /* Darker green on hover */
+}
+
+.cancelButton {
+    background-color: #f44336; /* Red background for the Cancel button */
+    /* Align styling with the Save button */
+    font-size: inherit; /* Ensures font size matches the form */
+}
+
+.cancelButton:hover {
+    background-color: #d32f2f; /* Darker red on hover */
+}
+
+
+/* for deal w,l,final invoice*/
+
+
+#finalInvoiceForm,
+#dealWonForm,
+#dealLostForm  {
+    margin-top: 20px ; /* Space between button and form */
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+   
+}
+
+
+
+#finalInvoiceForm label,
+#dealWonForm label,
+#dealLostForm label {
+    display: block;
+    margin-top: 10px;
+}
+
+#finalInvoiceForm input[type=text],
+#finalInvoiceForm input[type=tel],
+#finalInvoiceForm input[type=email],
+#dealWonForm input[type=text],
+#dealWonForm input[type=tel],
+#dealWonForm input[type=email],
+#dealLostForm input[type=text],
+#dealLostForm input[type=tel],
+#dealLostForm input[type=email]{
+
+    width: 100%;
+    padding: 8px;
+    margin-top: 5px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+} 
+
+
+#finalInvoiceForm fieldset,
+#dealWonForm fieldset,
+#dealLostForm fieldset{
+    border: none;
+    margin: 10px 0;
+    padding: 0;
+}
+
+#finalInvoiceForm legend,
+#dealWonForm legend,
+#dealLostForm legend{
+    
+    font-size: 1.2em;
+    margin-bottom: 10px;
+}
+
+
+/* ... existing styles ... */
+
+/* Styles for Save and Cancel buttons */
+#finalInvoiceForm button[type=submit],
+#dealWonForm button[type=submit],
+#dealLostForm button[type=submit],
+#finalInvoiceForm .cancelButton,
+#dealWonForm .cancelButton,
+#dealLostForm .cancelButton {
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-top: 20px;
+    display: inline-block; /* Makes buttons sit side-by-side */
+    margin-right: 10px; /* Adds some space between the buttons */
+}
+
+/* Save button specific styles */
+#finalInvoiceForm button[type=submit],
+#dealWonForm button[type=submit],
+#dealLostForm button[type=submit] {
+    background-color: #4CAF50; /* Green background for the Save button */
+}
+
+#finalInvoiceForm button[type=submit]:hover,
+#dealWonForm button[type=submit]:hover,
+#dealLostForm button[type=submit]:hover {
+    background-color: #45a049; /* Darker green on hover */
+}
+
+/* Cancel button specific styles */
+#finalInvoiceForm .cancelButton,
+#dealWonForm .cancelButton,
+#dealLostForm .cancelButton {
+    background-color: #f44336; /* Red background for the Cancel button */
+}
+
+#finalInvoiceForm .cancelButton:hover,
+#dealWonForm .cancelButton:hover,
+#dealLostForm .cancelButton:hover {
+    background-color: #d32f2f; /* Darker red on hover */
+}
+
+
+
+
+.infoBlock {
+    padding: 10px;
+    margin-bottom: 10px; /* Space between info blocks */
+    background-color: #ffffff; /* Solid white background */
+    border: 1px solid #ccc; /* Light grey border */
+    border-radius: 4px; /* Rounded corners */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Slight shadow for depth */
+    cursor: grab; /* Cursor indicates this can be grabbed */
+    transition: box-shadow 0.3s; /* Smooth transition for shadow effects */
+}
+
+.infoBlock:hover {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* More pronounced shadow on hover */
+}
+
+.infoBlock:active {
+    cursor: grabbing; /* Cursor changes when the block is being dragged */
+}
+
+/* Highlight the drop area during drag-over */
+.kanban-column-content {
+    transition: background-color 0.3s;
+}
+
+.kanban-column-content:hover {
+    background-color: #f0f0f0; /* Light grey background to indicate a droppable area */
+}
+
+
+
+/* Highlight drop zones when dragging over */
+.kanban-column-content.highlight {
+    background-color: rgba(255, 255, 255, 0.4); /* Lighter background to highlight */
+    border: 2px dashed #4CAF50; /* Dashed border to indicate it's active */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2); /* Subtle shadow for depth */
+}
+
+/* Additional styles for dragging and dropping */
+.infoBlock.is-dragging {
+    opacity: 0.5; /* Make the dragging block semi-transparent */
+}
+
+/* You might also want to adjust the hover styles to only apply when not dragging */
+.kanban-column-content:not(.highlight):hover {
+    background-color: #f0f0f0; /* Revert this if it conflicts with the highlight style */
+}
+
+
+/* General style for drop zones */
+.kanban-column-content {
+    border: 2px dashed rgba(255, 255, 255, 0.3); /* Subtle dashed border */
+    border-radius: 4px; /* Consistent with the design */
+    padding: 10px; /* Ensure there's space inside */
+    min-height: 50px; /* Minimum height to make the drop zone visible even when empty */
+    transition: border-color 0.3s, box-shadow 0.3s; /* Smooth transitions for feedback */
+    background-color: rgba(0, 0, 0, 0.1); /* Slightly different background to stand out */
+}
+
+/* Enhanced highlight style for active drop zones */
+.kanban-column-content.highlight {
+    border-color: #4CAF50; /* More visible border color when active */
+    background-color: rgba(255, 255, 255, 0.4); /* Lighter background to highlight */
+    box-shadow: 0 0 15px rgba(76, 175, 80, 0.5); /* Greenish glow to indicate active drop zone */
+}
+
+/* Optional: Style adjustments for when dragging items */
+.infoBlock.is-dragging {
+    opacity: 0.5;
+}
+
+.deleteButton {
+    margin-left: 10px;
+    padding: 5px 10px;
+    background-color:rgb(31, 31, 27);
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.deleteButton:hover {
+    background-color:rgb(110, 107, 102);
+    /* Darken button when hovered */
+    opacity: 0.8;
+}

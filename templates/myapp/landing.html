@@ -1,0 +1,33 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CRM Website</title>
+    <link rel="stylesheet" href="{% static 'myapp/css/styles.css' %}">
+</head>
+<body>
+    <header>
+        <h1>CRM Website</h1>
+        <nav>
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Features</a></li>
+                <li><a href="#">Pricing</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+    <section class="hero">
+        <h2>Welcome to Our CRM Platform</h2>
+        <p>Manage your contacts, tasks, and projects efficiently with our powerful CRM solution.</p>
+        <a href="{% url 'signup'%}" class="btn">Get Started</a>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 CRM Website. All rights reserved.</p>
+    </footer>
+</body>
+</html>

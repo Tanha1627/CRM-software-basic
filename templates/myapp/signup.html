@@ -1,0 +1,37 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'myapp/css/styles1.css' %}">
+    <title>CRM System - Sign Up</title>
+</head>
+<body>
+    <div class="background">
+        <div class="shape"></div>
+        <div class="shape"></div>
+    </div>
+
+    <form method="post">
+        {% csrf_token %}
+        <h3>Sign Up</h3>
+
+        <label for="id_username">Username</label>
+        {{ form.username }}
+
+
+        <label for="id_password1">Password</label>
+        {{ form.password1 }}
+
+        <label for="id_password2">Password confirmation</label>
+        {{ form.password2 }}
+
+        <button type="submit">Sign Up</button>
+
+        <div class="form">
+            <p>Have an account? <a href="{% url 'login' %}">Login</a></p>
+        </div>
+    </form>
+</body>
+</html>

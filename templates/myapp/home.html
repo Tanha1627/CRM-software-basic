@@ -1,0 +1,37 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+    <link rel="stylesheet" href="{% static 'myapp/css/style2nd.css'%}">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <nav id="navbar">
+                <div class="logo">
+                    <div id="logo">CRM SOLUTION</div>
+                    <div id="userbox">Username</div>
+                </div>
+            </nav>
+        </header>
+    </div>
+    <aside id="menu">
+        <ul>
+            <li id="box1">
+                <a href="dashboard1.html"><span>Feed</span></a>
+             </li>
+             <li id="box2">
+                 <a href="tasks_and_projects.html"><span>Tasks and Projects</span></a>
+             </li>
+             <li id="box3">
+                 <a href="{% url 'kanban_page'%}"><span>CRM</span></a>
+             </li>
+        </ul>
+    </aside>
+   
+   
+</body>
+</html>

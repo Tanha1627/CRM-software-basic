@@ -1,0 +1,222 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CRM31</title>
+    <link rel="stylesheet" href="{% static 'myapp/css/drag3.css' %}">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <nav id="navbar">
+                <div class="logo">
+                    <div id="logo">CRM SOLUTION</div>
+                    <div id="userbox">{{ user.username }}</div>
+                </div>
+            </nav>
+        </header>
+    </div>
+    <div class="container2">
+        <a href="{% url 'kanban_page' %}" id="deal1">Deals</a>
+    </div>
+    <aside id="menu">
+        <ul>
+            <li id="box1"><a href="#"><span>Feed</span></a></li>
+            <li id="box2"><a href="#"><span>Tasks and Projects</span></a></li>
+            <li id="box3"><a href="#"><span>CRM</span></a></li>
+        </ul>
+    </aside>
+    <div class="container3">
+        <div class="kanban-column" id="it1">
+            <div class="kanban-column-header">New</div>
+            <div class="kanban-column-content" id="newColumnTasks">
+                {% for task in tasks %}
+                    {% if task.status == 'New' %}
+                        <div class="infoBlock" id="info-{{ task.id }}" draggable="true">
+                            {{ task.name }}, {{ task.deal }}, {{ task.amountCurrency }}
+                            <button class="deleteButton" onclick="deleteTask('{{ task.id }}')">Delete</button>
+                        </div>
+                    {% endif %}
+                {% endfor %}
+            </div>
+            <button class="toggleFormButton" data-column="newColumnTasks">+ Quick Deal</button>
+            <div class="formContainer hidden" id="newColumnForm">
+                <form id="exampleForm">
+                    <label for="name">Name</label>
+                    <input type="text" id="name" name="name">
+                    <label for="deal">Deal</label>
+                    <input type="text" id="deal" name="deal">
+                    <label for="amountCurrency">Amount and Currency</label>
+                    <input type="text" id="amountCurrency" name="amountCurrency">
+                    <fieldset>
+                        <legend>Client Contact</legend>
+                        <label for="contactName">Contact Name</label>
+                        <input type="text" id="contactName" name="contactName">
+                        <label for="phone">Phone</label>
+                        <input type="tel" id="phone" name="phone">
+                        <label for="email">Email Address</label>
+                        <input type="email" id="email" name="email">
+                    </fieldset>
+                    <label for="companyName">Company Name</label>
+                    <input type="text" id="companyName" name="companyName">
+                    <button type="submit">Save</button>
+                </form>
+                <button type="button" class="cancelButton">Cancel</button>
+            </div>
+        </div>
+        <!-- Repeat similar blocks for other columns (In Progress, Final Invoice, etc.) -->
+        <div class="kanban-column" id="it2">
+            <div class="kanban-column-header">In Progress</div>
+            <div class="kanban-column-content" id="inProgressColumnTasks">
+                {% for task in tasks %}
+                    {% if task.status == 'In Progress' %}
+                        <div class="infoBlock" id="info-{{ task.id }}" draggable="true">
+                            {{ task.name }}, {{ task.deal }}, {{ task.amountCurrency }}
+                            <button class="deleteButton" onclick="deleteTask('{{ task.id }}')">Delete</button>
+                        </div>
+                    {% endif %}
+                {% endfor %}
+            </div>
+            <button class="toggleFormButton" data-column="inProgressColumnTasks">+ Quick Deal</button>
+            <div class="formContainer hidden" id="inProgressColumnForm">
+                <form id="inProgressForm">
+                    <label for="name">Name</label>
+                    <input type="text" id="name" name="name">
+                    <label for="deal">Deal</label>
+                    <input type="text" id="deal" name="deal">
+                    <label for="amountCurrency">Amount and Currency</label>
+                    <input type="text" id="amountCurrency" name="amountCurrency">
+                    <fieldset>
+                        <legend>Client Contact</legend>
+                        <label for="contactName">Contact Name</label>
+                        <input type="text" id="contactName" name="contactName">
+                        <label for="phone">Phone</label>
+                        <input type="tel" id="phone" name="phone">
+                        <label for="email">Email Address</label>
+                        <input type="email" id="email" name="email">
+                    </fieldset>
+                    <label for="companyName">Company Name</label>
+                    <input type="text" id="companyName" name="companyName">
+                    <button type="submit">Save</button>
+                </form>
+                <button type="button" class="cancelButton">Cancel</button>
+            </div>
+        </div>
+        <div class="kanban-column" id="it3">
+            <div class="kanban-column-header">Final Invoice</div>
+            <div class="kanban-column-content" id="finalInvoiceColumnTasks">
+                {% for task in tasks %}
+                    {% if task.status == 'Final Invoice' %}
+                        <div class="infoBlock" id="info-{{ task.id }}" draggable="true">
+                            {{ task.name }}, {{ task.deal }}, {{ task.amountCurrency }}
+                            <button class="deleteButton" onclick="deleteTask('{{ task.id }}')">Delete</button>
+                        </div>
+                    {% endif %}
+                {% endfor %}
+            </div>
+            <button class="toggleFormButton" data-column="finalInvoiceColumnTasks">+ Quick Deal</button>
+            <div class="formContainer hidden" id="finalInvoiceColumnForm">
+                <form id="finalInvoiceForm">
+                    <label for="name">Name</label>
+                    <input type="text" id="name" name="name">
+                    <label for="deal">Deal</label>
+                    <input type="text" id="deal" name="deal">
+                    <label for="amountCurrency">Amount and Currency</label>
+                    <input type="text" id="amountCurrency" name="amountCurrency">
+                    <fieldset>
+                        <legend>Client Contact</legend>
+                        <label for="contactName">Contact Name</label>
+                        <input type="text" id="contactName" name="contactName">
+                        <label for="phone">Phone</label>
+                        <input type="tel" id="phone" name="phone">
+                        <label for="email">Email Address</label>
+                        <input type="email" id="email" name="email">
+                    </fieldset>
+                    <label for="companyName">Company Name</label>
+                    <input type="text" id="companyName" name="companyName">
+                    <button type="submit">Save</button>
+                </form>
+                <button type="button" class="cancelButton">Cancel</button>
+            </div>
+        </div>
+        <div class="kanban-column" id="it4">
+            <div class="kanban-column-header">Deal Won</div>
+            <div class="kanban-column-content" id="dealWonColumnTasks">
+                {% for task in tasks %}
+                    {% if task.status == 'Deal Won' %}
+                        <div class="infoBlock" id="info-{{ task.id }}" draggable="true">
+                            {{ task.name }}, {{ task.deal }}, {{ task.amountCurrency }}
+                            <button class="deleteButton" onclick="deleteTask('{{ task.id }}')">Delete</button>
+                        </div>
+                    {% endif %}
+                {% endfor %}
+            </div>
+            <button class="toggleFormButton" data-column="dealWonColumnTasks">+ Quick Deal</button>
+            <div class="formContainer hidden" id="dealWonColumnForm">
+                <form id="dealWonForm">
+                    <label for="name">Name</label>
+                    <input type="text" id="name" name="name">
+                    <label for="deal">Deal</label>
+                    <input type="text" id="deal" name="deal">
+                    <label for="amountCurrency">Amount and Currency</label>
+                    <input type="text" id="amountCurrency" name="amountCurrency">
+                    <fieldset>
+                        <legend>Client Contact</legend>
+                        <label for="contactName">Contact Name</label>
+                        <input type="text" id="contactName" name="contactName">
+                        <label for="phone">Phone</label>
+                        <input type="tel" id="phone" name="phone">
+                        <label for="email">Email Address</label>
+                        <input type="email" id="email" name="email">
+                    </fieldset>
+                    <label for="companyName">Company Name</label>
+                    <input type="text" id="companyName" name="companyName">
+                    <button type="submit">Save</button>
+                </form>
+                <button type="button" class="cancelButton">Cancel</button>
+            </div>
+        </div>
+        <div class="kanban-column" id="it5">
+            <div class="kanban-column-header">Deal Lost</div>
+            <div class="kanban-column-content" id="dealLostColumnTasks">
+                {% for task in tasks %}
+                    {% if task.status == 'Deal Lost' %}
+                        <div class="infoBlock" id="info-{{ task.id }}" draggable="true">
+                            {{ task.name }}, {{ task.deal }}, {{ task.amountCurrency }}
+                            <button class="deleteButton" onclick="deleteTask('{{ task.id }}')">Delete</button>
+                        </div>
+                    {% endif %}
+                {% endfor %}
+            </div>
+            <button class="toggleFormButton" data-column="dealLostColumnTasks">+ Quick Deal</button>
+            <div class="formContainer hidden" id="dealLostColumnForm">
+                <form id="dealLostForm">
+                    <label for="name">Name</label>
+                    <input type="text" id="name" name="name">
+                    <label for="deal">Deal</label>
+                    <input type="text" id="deal" name="deal">
+                    <label for="amountCurrency">Amount and Currency</label>
+                    <input type="text" id="amountCurrency" name="amountCurrency">
+                    <fieldset>
+                        <legend>Client Contact</legend>
+                        <label for="contactName">Contact Name</label>
+                        <input type="text" id="contactName" name="contactName">
+                        <label for="phone">Phone</label>
+                        <input type="tel" id="phone" name="phone">
+                        <label for="email">Email Address</label>
+                        <input type="email" id="email" name="email">
+                    </fieldset>
+                    <label for="companyName">Company Name</label>
+                    <input type="text" id="companyName" name="companyName">
+                    <button type="submit">Save</button>
+                </form>
+                <button type="button" class="cancelButton">Cancel</button>
+            </div>
+        </div>
+    </div>
+    <script src="{% static 'myapp/js/drag3.js' %}" defer></script>
+</body>
+</html>
+
